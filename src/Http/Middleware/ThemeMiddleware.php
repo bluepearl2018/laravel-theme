@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Eutranet\Theme\Http\Middleware;
 
 use Auth;
 use Closure;
@@ -20,9 +20,6 @@ class ThemeMiddleware
 	 */
 	public function handle(Request $request, Closure $next): Response|RedirectResponse
 	{
-		if (Auth::guard('admin')->id() === 1) {
-			return redirect(route('themes.dashboard'));
-		}
 		return $next($request);
 	}
 }

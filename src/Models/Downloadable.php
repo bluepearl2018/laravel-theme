@@ -11,8 +11,8 @@ class Downloadable extends Model
 		"Eutranet\'s Laravel Theme" => "eutranet/laravel-themee",
 		"Eutranet\'s Laravel Commons" => "eutranet/laravel-commons",
 		"Eutranet\'s Laravel Setup" => "eutranet/laravel-setup",
+		"Eutranet\'s Laravel My Space" => "eutranet/laravel-my-space",
 		"Eutranet\'s Laravel Backend" => "eutranet/laravel-be",
 		"Eutranet\'s Laravel Frontend" => "eutranet/laravel-frontend",
-		"Eutranet\'s Laravel My Space" => "eutranet/laravel-my-space"
 	];
 }

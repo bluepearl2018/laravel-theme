@@ -1,16 +1,42 @@
-# Theme templates and components developed for Eutranet
+# Eutranet's Laravel Theme
+This package contains Eutranet's Laravel Theme.
 
-Ce package est principalement destiné à créer les conditions pour un portail de base.
+## Introduction
+This package allows one to display Eutranet's core packages.
 
-## Installation
+## Support us
+More soon.
 
-La commande à utiliser pour l'installation du package thématique est eutranet:install-theme.
+## Pre-requisites
+### Laravel Version
+This package requires Laravel 9 or higher.
 
-### Base de données
+### PHP
+SpoofCheckValidation will require the Intl extension
 
-Une entrée est créé dans la table instaLL_statuses de manière à verrouiller l'installateur.
+### Config file
+This package publishes the eutranet-theme config file.
 
-### Vues
+## Installation in Laravel
+This package can be used with Laravel 9.0 or higher.
 
-- auth.login : le formulaire poste selon la garde
-- auth.register : les champs d'inscription sont plus nombreux 
+### Installing
+1. Have a look at the prerequisites section.
+2. Installation command is php artisan eutranet:install-theme
+4. Optimize (php artisan optimize)
+
+## Questions and issues
+A bug? Problems with the package? Questions or suggestions? Tell us on GitHub.
+
+## Changelog
+All notable changes are documented on GitHub.
+
+# For frontend users
+The theme for My Space package.
+The theme for the frontend.
+
+# For staff members
+The theme for the Backend package.
+
+# For administrators
+The theme for the Setup package.
