@@ -5,7 +5,9 @@
 		<div x-data="{mobileMenu: false}" class="min-h-full mx-auto max-w-7xl bg-gray-100 relative">
 			@yield('app')
 			<div class="lg:pl-64 flex w-full lg:relative flex-col flex-1 max-w-7xl">
-				@include('theme::partials.footer')
+				@if(Schema::hasTable('corporates'))
+					@include('theme::partials.footer')
+				@endif
 			</div>
 		</div>
 		@stack('bottom-scripts')
