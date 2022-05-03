@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Schema;
 
 class FooterAddress extends Component
 {
-    private Corporate $corporate;
+    private mixed $corporate;
 
     /**
      * Create a new component instance.
@@ -21,6 +21,7 @@ class FooterAddress extends Component
      */
     public function __construct(Corporate $model, $id = null)
     {
+        $this->corporate = null;
         if (Schema::hasTable('corporates')) {
             if ($id) {
                 $this->corporate = $model::find($id) ?? $model::find(1);
