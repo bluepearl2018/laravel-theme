@@ -21,7 +21,7 @@ class FormUpdateButton extends Component
      */
     public function __construct($form)
     {
-        $this->form = $form ? : 'edit-frm';
+        $this->form = $form ?: 'edit-frm';
     }
 
     /**

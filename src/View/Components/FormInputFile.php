@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Forms;
+namespace Eutranet\Theme\View\Components;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Translation\Translator;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Str;
 
-class InputFile extends Component
+class FormInputFile extends Component
 {
 
     /**
@@ -71,7 +71,7 @@ class InputFile extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('components.forms.input-file', [
+        return view('theme::components.form-input-file', [
             'name' => $this->name,
             'id' => $this->id,
             'label' => $this->label,

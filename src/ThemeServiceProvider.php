@@ -45,6 +45,9 @@ use Eutranet\Theme\View\Components\FormCheckboxOption;
 use Eutranet\Theme\View\Components\FormInputPttaxid;
 use Eutranet\Theme\View\Components\FormSelectList;
 use Eutranet\Theme\View\Components\FormDatesDate;
+use Eutranet\Theme\View\Components\FormInputFile;
+use Eutranet\Theme\View\Components\FormInputHidden;
+use Eutranet\Theme\View\Components\FormInputNumber;
 
 class ThemeServiceProvider extends PackageServiceProvider
 {
@@ -107,6 +110,9 @@ class ThemeServiceProvider extends PackageServiceProvider
 			FormDatesDate::class,
 			FormInput::class,
 			FormInputEmail::class,
+			FormInputFile::class,
+			FormInputHidden::class,
+			FormInputNumber::class,
 			FormInputPhone::class,
 			FormInputPttaxid::class,
 			FormSelectList::class,

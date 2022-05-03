@@ -15,7 +15,6 @@ class H2 extends Component
      */
     public function __construct()
     {
-
     }
 
     /**
@@ -25,6 +24,6 @@ class H2 extends Component
      */
     public function render(): View|Factory|Application
     {
-	    return view('theme::components.h2');
+        return view('theme::components.h2');
     }
 }

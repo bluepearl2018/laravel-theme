@@ -1,5 +1,5 @@
 <div class="flex flex-col my-4">
-	<input type="hidden" id="{{ Str::slug($id) }}" name="{{ Str::snake($id) }}" value="{{$old}}"/>
+	<input type="hidden" id="{{ Str::slug($id) }}" name="{{ Str::replace('-', '_', $id) }}" value="{{$old}}"/>
 	<label for="{{ Str::slug($id) }}-cb">
 		{{ $label }}
 		<input id="{{ Str::slug($id) }}-cb"
@@ -9,8 +9,8 @@
 		/>
 	</label>
 	<span class="mr-auto text-xs text-gray-500 p-0.5">{{ $tip }}</span>
-	@if(isset($errors) && $errors->has(Str::snake($id)))
-		<div class="alert alert-danger text-red-500">{{ $errors->first(Str::snake($id)) }}</div>
+	@if(isset($errors) && $errors->has(Str::replace('-', '_', $id)))
+		<div class="alert alert-danger text-red-500">{{ $errors->first(Str::replace('-', '_', $id)) }}</div>
 	@endif
 </div>
 @push('bottom-scripts')

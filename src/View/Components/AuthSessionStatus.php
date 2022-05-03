@@ -10,25 +10,24 @@ use Illuminate\Contracts\View\View;
 
 class AuthSessionStatus extends Component
 {
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+    }
 
-	/**
-	 * Create a new component instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-	}
-
-	/**
-	 * Get the view / contents that represent the component.
-	 *
-	 * @return Application|Factory|View
-	 */
-	public function render(): View|Factory|Application
-	{
-		return view('theme::components.auth-session-status', [
-			'status' => session('status')
-		]);
-	}
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return Application|Factory|View
+     */
+    public function render(): View|Factory|Application
+    {
+        return view('theme::components.auth-session-status', [
+            'status' => session('status')
+        ]);
+    }
 }

@@ -9,11 +9,13 @@
             {!! $corporate->council ? '<br>' . $corporate->council : '' !!}    {!! $corporate->district ? '-' . $corporate->district : '' !!}
             {!! $corporate->phone ? '<br><i class="fa fa-phone mr-2"></i>' . $corporate->phone : '' !!}
             {!! $corporate->mobile ? '<br><i class="fa fa-mobile mr-2"></i>' . $corporate->mobile : '' !!}
-            @if($corporate->email_private !== NULL)
-                <form action="{{ route('contacts.form')}}" method="POST">
-                    @csrf
-                    <button type="submit" class="text-gray-500"><i class="fa fa-envelope mr-2"></i>{!! $corporate->email_private !!}</button>
-                </form>
+            @if(Route::has('contacts.form'))
+                @if($corporate->email_private !== NULL)
+                    <form action="{{ route('contacts.form')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-gray-500"><i class="fa fa-envelope mr-2"></i>{!! $corporate->email_private !!}</button>
+                    </form>
+                @endif
             @endif
         </span>
     @endisset

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Forms;
+namespace Eutranet\Theme\View\Components;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Translation\Translator;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Str;
 
-class InputHidden extends Component
+class FormInputHidden extends Component
 {
     private $name;
     private $id;
@@ -42,7 +42,7 @@ class InputHidden extends Component
      */
     public function render()
     {
-        return view('components.forms.input-hidden', [
+        return view('theme::components.form-input-hidden', [
             'id' => $this->id,
             'name' => $this->name,
             'old' => $this->old

@@ -28,10 +28,10 @@
 			</div>
 			<div class="py-6 sm:py-0 sm:mb-4 sm:mt-12 grid grid-cols-2 xl:mt-0 xl:col-span-2">
 				<div class="col-span-full sm:col-span-1">
-					<x-theme::footers.address :id="1"></x-theme::footers.address>
+					<x-theme-footer-address :id="1"></x-theme-footer-address>
 				</div>
 				<div class="col-span-full sm:col-span-1">
-					<x-theme::footers.address :id="2"></x-theme::footers.address>
+					<x-theme-footer-address :id="2"></x-theme-footer-address>
 				</div>
 			</div>
 		</div>

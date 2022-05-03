@@ -11,13 +11,13 @@ use Laracasts\Flash\Flash;
 
 class ThemeController extends Controller
 {
-	public function __construct()
-	{
-		$this->middleware(['auth:admin', 'role:super-admin']);
-	}
+    public function __construct()
+    {
+        $this->middleware(['auth:admin', 'role:super-admin']);
+    }
 
-	public function index(): Factory|View|Application
-	{
-		return view('theme::index');
-	}
+    public function index(): Factory|View|Application
+    {
+        return view('theme::index');
+    }
 }

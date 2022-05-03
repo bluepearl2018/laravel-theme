@@ -39,11 +39,11 @@ class FormInputPhone extends Component
         $this->name = $columnName;
         $this->id = \Str::slug($columnName);
         $this->label = trans('fields.'.$this->name);
-        $this->required = $specs[2] ?? NULL;
-        $this->placeholder = $specs[3] ?? NULL;
-        $this->tip = $specs[4] ?? NULL;
+        $this->required = $specs[2] ?? null;
+        $this->placeholder = $specs[3] ?? null;
+        $this->tip = $specs[4] ?? null;
         $this->old = $old;
-        $this->readonly = $specs[5] ?? NULL;
+        $this->readonly = $specs[5] ?? null;
     }
 
     /**

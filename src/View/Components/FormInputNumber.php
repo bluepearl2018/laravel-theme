@@ -7,21 +7,24 @@ use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Str;
 
-class FormInputTextarea extends Component
+class FormInputNumber extends Component
 {
-    private string $name;
-    private string $label;
-    private string $id;
-    private string $placeholder;
-    private string $tip;
-    private mixed $old;
+    private $name;
+    private $label;
+    private $id;
+    private $placeholder;
+    private $tip;
+    private $old;
 
     /**
      * @var mixed
      */
     private $required;
+    /**
+     * @var mixed|string
+     */
+    private mixed $readonly;
     /**
      * @var array|Application|Translator|string|null
      */
@@ -34,11 +37,13 @@ class FormInputTextarea extends Component
     public function __construct($columnName, $specs, $old)
     {
         $this->name = $columnName;
-        $this->id = Str::slug($columnName);
-        $this->label = trans('fields.' . $this->name);
+        $this->id = \Str::slug($columnName);
+        $this->label = trans('fields.'.$this->name);
         $this->required = $specs[2];
-        $this->placeholder = $specs[3];
+        $this->placeholder = $specs[4];
         $this->tip = $specs[4];
+        $this->readonly = $specs[5] ?? ''; // Case it is an input...
+        $this->model = $specs[5] ?? ''; // Case it is a select
         $this->old = $old;
     }
 
@@ -49,14 +54,15 @@ class FormInputTextarea extends Component
      */
     public function render()
     {
-        return view('theme::components.form-input-textarea', [
+        return view('theme::components.form-input-number', [
             'name' => $this->name,
             'id' => $this->id,
             'label' => $this->label,
             'required' => $this->required,
             'placeholder' => $this->placeholder,
             'tip' => $this->tip,
-            'old' => $this->old
+            'old' => $this->old,
+            'readonly' => $this->readonly,
         ]);
     }
 }

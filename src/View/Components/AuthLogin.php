@@ -10,43 +10,39 @@ use Illuminate\Contracts\View\View;
 
 class AuthLogin extends Component
 {
-	private string $registerRoutePath;
-	private string $loginRoutePath;
+    private string $registerRoutePath;
+    private string $loginRoutePath;
 
-	/**
-	 * Create a new component instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		if(Route::has('register'))
-		{
-			$this->registerRoutePath = route('register');
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        if (Route::has('register')) {
+            $this->registerRoutePath = route('register');
+        } else {
+            $this->registerRoutePath = route('welcome');
+        }
 
-		} else {
-			$this->registerRoutePath = route('welcome');
-		}
+        if (Route::has('login')) {
+            $this->loginRoutePath = route('login');
+        } else {
+            $this->loginRoutePath = route('welcome');
+        }
+    }
 
-		if(Route::has('login'))
-		{
-			$this->loginRoutePath = route('login');
-
-		} else {
-			$this->loginRoutePath = route('welcome');
-		}
-	}
-
-	/**
-	 * Get the view / contents that represent the component.
-	 *
-	 * @return Application|Factory|View
-	 */
-	public function render(): View|Factory|Application
-	{
-		return view('theme::components.auth-login', [
-			'loginRoutePath' => $this->loginRoutePath,
-			'registerRoutePath' => $this->registerRoutePath
-		]);
-	}
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return Application|Factory|View
+     */
+    public function render(): View|Factory|Application
+    {
+        return view('theme::components.auth-login', [
+            'loginRoutePath' => $this->loginRoutePath,
+            'registerRoutePath' => $this->registerRoutePath
+        ]);
+    }
 }

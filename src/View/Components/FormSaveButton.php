@@ -21,7 +21,7 @@ class FormSaveButton extends Component
      */
     public function __construct($form)
     {
-        $this->form = $form ? : 'create-frm';
+        $this->form = $form ?: 'create-frm';
     }
 
     /**
