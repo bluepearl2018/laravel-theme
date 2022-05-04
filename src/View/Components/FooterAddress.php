@@ -7,7 +7,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Log;
-use Eutranet\Corporate\Models\Corporate;
 use Illuminate\Support\Facades\Schema;
 
 class FooterAddress extends Component
@@ -19,14 +18,16 @@ class FooterAddress extends Component
      *
      * @return void
      */
-    public function __construct(Corporate $model, $id = null)
+    public function __construct($model, $id = null)
     {
         $this->corporate = null;
-        if (Schema::hasTable('corporates')) {
-            if ($id) {
-                $this->corporate = $model::find($id) ?? $model::find(1);
+        if (class_exists(\Eutranet\Corporate\Models\Corporate::class)) {
+            if (Schema::hasTable('corporates')) {
+                if ($id) {
+                    $this->corporate = $model::find($id) ?? $model::find(1);
+                }
+                Log::critical('Missing Corporate entry with id ' . $id . ' in order to display laravel-corporate address');
             }
-            Log::critical('Missing Corporate entry with id ' . $id . ' in order to display laravel-corporate address');
         }
     }
 
