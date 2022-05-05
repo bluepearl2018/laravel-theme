@@ -6,7 +6,7 @@
 			@yield('app')
 			<div class="lg:pl-64 flex w-full lg:relative flex-col flex-1 max-w-7xl">
 				@if(Schema::hasTable('corporates'))
-					@include('theme::partials.footer')
+					@component('theme::partials.footer', ['model' => 'EutranetCorporateModelsCorporate'])@endcomponent
 				@endif
 			</div>
 		</div>

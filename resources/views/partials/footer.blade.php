@@ -3,7 +3,7 @@
 	<div class="max-w-7xl mx-auto py-12 px-8 sm:px-6 lg:py-16 lg:px-8">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-8 xl:col-span-1">
-				<img class="h-10" src="{{ asset('images/logo.svg') }}" alt="{{ config('app.name') }}">
+				<x-theme-footer-logo></x-theme-footer-logo>
 				<p class="text-gray-500 text-base">{{ config('eutranet-setup.baseline') }}</p>
 				<div class="flex space-x-6">
 					@if(Route::has('youtube'))

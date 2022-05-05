@@ -48,6 +48,7 @@ use Eutranet\Theme\View\Components\FormDatesDate;
 use Eutranet\Theme\View\Components\FormInputFile;
 use Eutranet\Theme\View\Components\FormInputHidden;
 use Eutranet\Theme\View\Components\FormInputNumber;
+use Eutranet\Theme\View\Components\FooterLogo;
 
 class ThemeServiceProvider extends PackageServiceProvider
 {
@@ -99,6 +100,7 @@ class ThemeServiceProvider extends PackageServiceProvider
 			FlashMessage::class,
 			FlashModal::class,
 			FooterAddress::class,
+			FooterLogo::class,
 
 			/**
 			 * ------------------------------------------------------

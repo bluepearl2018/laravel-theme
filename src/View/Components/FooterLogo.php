@@ -10,7 +10,7 @@ use Log;
 use Illuminate\Support\Facades\Schema;
 use Eutranet\Corporate\Models\Corporate;
 
-class FooterAddress extends Component
+class FooterLogo extends Component
 {
     private mixed $corporate;
 
@@ -19,12 +19,14 @@ class FooterAddress extends Component
      *
      * @return void
      */
-    public function __construct($id = NULL)
+    public function __construct($assetImgUrl = NULL)
     {
-        $this->corporate = null;
-        if (Schema::hasTable('corporates') && class_exists(Corporate::class)) {
-            $this->corporate = Corporate::find($id) ?? NULL;
-        }
+		if(isset($assetImgUrl))
+		{
+			$this->assetImgUrl = $assetImgUrl;
+		} else {
+			$this->assetImgUrl = asset('/images/logo.svg');
+		}
     }
 
     /**
@@ -34,6 +36,6 @@ class FooterAddress extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('theme::components.footer-address', ['corporate' => $this->corporate]);
+        return view('theme::components.footer-logo', ['assetImgUrl' => $this->assetImgUrl]);
     }
 }
