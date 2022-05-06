@@ -49,6 +49,7 @@ use Eutranet\Theme\View\Components\FormInputFile;
 use Eutranet\Theme\View\Components\FormInputHidden;
 use Eutranet\Theme\View\Components\FormInputNumber;
 use Eutranet\Theme\View\Components\FooterLogo;
+use Eutranet\Theme\View\Components\FormDatesTime;
 
 class ThemeServiceProvider extends PackageServiceProvider
 {
@@ -110,6 +111,7 @@ class ThemeServiceProvider extends PackageServiceProvider
 			FormCancelButton::class,
 			FormCheckboxOption::class,
 			FormDatesDate::class,
+			FormDatesTime::class,
 			FormInput::class,
 			FormInputEmail::class,
 			FormInputFile::class,

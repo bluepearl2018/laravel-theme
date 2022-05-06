@@ -26,6 +26,6 @@ class Message extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('components.theme::forms.message');
+        return view('components.theme-form-message');
     }
 }

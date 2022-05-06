@@ -26,6 +26,6 @@ class City extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('components.x-theme::forms.city');
+        return view('components.x-theme-form-city');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Forms;
+namespace Eutranet\Theme\View\Components;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Str;
 
-class DatesTime extends Component
+class FormDatesTime extends Component
 {
     private $id;
     private mixed $label;
@@ -46,7 +46,7 @@ class DatesTime extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('components.forms.dates-time', [
+        return view('theme::components.form-dates-time', [
             'name' => $this->name,
             'id' => $this->id,
             'label' => $this->label,
