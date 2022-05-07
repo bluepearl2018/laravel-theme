@@ -10,8 +10,19 @@
 			name="{{ Str::replace('-', '_', $id) }}"
 			placeholder="{{ $placeholder }}"
 			{{ isset($disabled) ? 'disabled' : '' }}
-			class="rounded-md shadow-sm border-gray-300 border text-lg focus:border-yellow-300 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 px-2 py-1 form-textarea">{{$old}}</textarea>
+			class="ckeditor rounded-md shadow-sm border-gray-300 border text-lg focus:border-yellow-300 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 px-2 py-1 form-textarea">{{$old}}</textarea>
 	@if(isset($errors) && $errors->has(Str::replace('-', '_', $id)))
 		<div class="alert alert-danger text-red-500">{{ $errors->first(Str::replace('-', '_', $id)) }}</div>
 	@endif
 </div>
+
+@push('top-scripts')
+	<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+@endpush
+@push('bottom-scripts')
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.ckeditor').ckeditor();
+		});
+	</script>
+@endpush
