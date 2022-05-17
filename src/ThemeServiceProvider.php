@@ -4,7 +4,6 @@ namespace Eutranet\Theme;
 
 use Eutranet\Init\PackageServiceProvider;
 use Eutranet\Init\Package;
-use Eutranet\Theme\View\Components\Seo\Meta;
 use Eutranet\Theme\Console\Commands\InstallEutranetThemeCommand;
 use Eutranet\Theme\View\Components\AuthRegister;
 use Eutranet\Theme\View\Components\Logo;
@@ -50,6 +49,11 @@ use Eutranet\Theme\View\Components\FormInputHidden;
 use Eutranet\Theme\View\Components\FormInputNumber;
 use Eutranet\Theme\View\Components\FooterLogo;
 use Eutranet\Theme\View\Components\FormDatesTime;
+use Eutranet\Theme\View\Components\SeoMeta;
+use Eutranet\Theme\View\Components\Map;
+use Eutranet\Theme\View\Components\FormAutoShowFields;
+use Eutranet\Theme\View\Components\FormAutoEditFields;
+use Eutranet\Theme\View\Components\FormAutoCreateFields;
 
 class ThemeServiceProvider extends PackageServiceProvider
 {
@@ -108,6 +112,9 @@ class ThemeServiceProvider extends PackageServiceProvider
 			 * FORMS COMPONENTS
 			 * ------------------------------------------------------
 			 */
+			FormAutoCreateFields::class,
+			FormAutoEditFields::class,
+			FormAutoShowFields::class,
 			FormCancelButton::class,
 			FormCheckboxOption::class,
 			FormDatesDate::class,
@@ -136,6 +143,13 @@ class ThemeServiceProvider extends PackageServiceProvider
 
 			/**
 			 * ------------------------------------------------------
+			 * MAPS
+			 * ------------------------------------------------------
+			 */
+			Map::class,
+
+			/**
+			 * ------------------------------------------------------
 			 * NAVIGATION COMPONENTS
 			 * ------------------------------------------------------
 			 */
@@ -148,6 +162,13 @@ class ThemeServiceProvider extends PackageServiceProvider
 			 * ------------------------------------------------------
 			 */
 			SearchBar::class,
+
+			/**
+			 * ------------------------------------------------------
+			 * SEO
+			 * ------------------------------------------------------
+			 */
+			SeoMeta::class,
 		]);
 	}
 }
