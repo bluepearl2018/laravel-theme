@@ -2,7 +2,7 @@
 
 return [
     'name' => 'Eutranet\'s Laravel Theme',
-    'description' => 'Laravel Theme is the second Eutranet\'s core packages',
+    'description' => 'Laravel Theme should be installed after Eutranet\'s Init package.',
     'tables' => [
         'themes',
     ],

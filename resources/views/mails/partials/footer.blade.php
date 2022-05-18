@@ -1,9 +1,9 @@
 <table style="width: 480px; border-top:solid 2px #fcc309">
 	<tr>
 		<td>
-			{{__('Phone')}} : {{ config('laravel-corporate.general_phone') }}
+			{{__('labels.Phone')}} : {{ config('laravel-corporate.general_phone') }}
 			|
-			{{__('Email')}} : {{ config('laravel-corporate.general_email') }}
+			{{__('labels.Email')}} : {{ config('laravel-corporate.general_email') }}
 		</td>
 	</tr>
 </table>

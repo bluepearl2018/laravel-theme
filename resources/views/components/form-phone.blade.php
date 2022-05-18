@@ -1,5 +1,5 @@
 <div class="flex flex-col space-y-2 w-full">
-	<label for="phone">{{ __('Phone') }}</label>
+	<label for="phone">{{ __('fields.Phone') }}</label>
 	<span class="text-xs text-gray-500 p-0.5">{{ __('Enter a valid phone number')  }}</span>
 	<input maxlength="14" minlength="9" value="{{ old('phone')
  }}" type="text" name="phone"

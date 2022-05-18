@@ -4,11 +4,11 @@
 	</div>
 	<div style="padding-left:4px" class=" mb-2">
 		@if($values[0] == 'select')
-			{{ $values[5]::find($entries[$key])?->name ?: 'NC' }}
+			{{ $values[5]::find($entries[$key])?->name ?: __('warnings.NC') }}
 		@elseif($values[0] == 'checkbox')
-			{{ $entries[$key] === '1' ? 'Sim' : 'Não' }}
+			{{ $entries[$key] === '1' ? __('labels.Yes')  : __('labels.No')  }}
 		@elseif($values[1] == 'text')
-			{{ $entries[$key] ?: 'NC' }}
+			{{ $entries[$key] ?: __('warnings.NC') }}
 		@elseif($values[1] == 'textarea')
 			{!! html_entity_decode($entries[$key]) ?: 'NC' !!}
 		@elseif($values[1] == 'date')
@@ -18,7 +18,7 @@
 				{{ __('NC') }}
 			@endif
 		@else
-			{{ $entries[$key] ?: 'NC' }}
+			{{ $entries[$key] ?: __('warnings.NC') }}
 		@endif
 	</div>
 </div>
