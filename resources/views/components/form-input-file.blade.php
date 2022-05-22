@@ -1,11 +1,11 @@
 <div class="flex flex-col space-y-2 my-4">
-    @props(['name', 'id', 'label', 'placeholder', 'tip', 'disabled' => false, 'old', 'required', 'readonly'])
+    @props(['name', 'id', 'label', 'placeholder', 'tip', 'disabled' => false, 'required', 'readonly'])
     <label for="{{ $id }}">{{ $label }}</label>
     <span class="text-xs text-gray-500 p-0.5">{{ $tip }}</span>
     <div x-data="{ files: null }" id="file-upload"
          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
         <input type="file"
-               value="{{$old}}"
+               value="{{$old ?? ''}}"
                id="{{ $id }}"
                name="{{ $name  }}"
                class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"

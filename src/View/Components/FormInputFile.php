@@ -52,7 +52,7 @@ class FormInputFile extends Component
      *
      * @return void
      */
-    public function __construct($columnName, $specs, $old)
+    public function __construct($columnName, $specs, $old = NULL)
     {
         $this->name = $columnName;
         $this->id = Str::slug($columnName);
@@ -78,7 +78,7 @@ class FormInputFile extends Component
             'required' => $this->required,
             'placeholder' => $this->placeholder,
             'tip' => $this->tip,
-            'old' => $this->old,
+            'old' => $this->old ?? NULL,
             'readonly' => $this->readonly
         ]);
     }

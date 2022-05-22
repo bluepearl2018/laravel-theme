@@ -6,7 +6,15 @@
 		@if($values[0] == 'select')
 			{{ $values[5]::find($entries[$key])?->name ?: __('warnings.NC') }}
 		@elseif($values[0] == 'checkbox')
-			{{ $entries[$key] === '1' ? __('labels.Yes')  : __('labels.No')  }}
+			@if($entries[$key] === NULL)
+				{{__('warnings.NC') }}
+			@else
+				@if($entries[$key] === 1 || $entries[$key] === true)
+					{{__('labels.Yes')}}
+				@elseif($entries[$key] === 0 || $entries[$key] === false)
+					{{__('labels.No')}}
+				@endif
+			@endif
 		@elseif($values[1] == 'text')
 			{{ $entries[$key] ?: __('warnings.NC') }}
 		@elseif($values[1] == 'textarea')

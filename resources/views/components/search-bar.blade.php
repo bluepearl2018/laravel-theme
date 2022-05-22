@@ -2,7 +2,7 @@
 <div class="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
 	<div class="flex-1 flex">
 		<form class="w-full flex md:ml-0" action="#" method="GET">
-			<label for="search-field" class="sr-only">{{__('Search')}}</label>
+			<label for="search-field" class="sr-only">{{__('search.Search')}}</label>
 			<div class="relative w-full text-gray-400 focus-within:text-gray-600">
 				<div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" aria-hidden="true">
 					<!-- Heroicon name: solid/search -->

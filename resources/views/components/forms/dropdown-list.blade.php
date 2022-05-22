@@ -3,7 +3,7 @@
 	<span class="text-xs text-gray-500 p-0.5">{{ $tip  }}</span>
 	<select type="select" id="{{$id}}" name="{{$name}}"
 			class="form-select bg-white" {{$required ?? ''}} {{ $readonly == 'readonly' ? 'disabled' : '' }}>
-		<option value="">{{ __('Select') }}</option>
+		<option value="">{{ __('labels.Select') }}</option>
 		@forelse($entries as $option)
 			<option value="{{ $option->id }}" {!! $old == $option->id  ? 'selected' : '' !!} >
 				{{ $option->name }}
